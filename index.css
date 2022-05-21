@@ -2,15 +2,24 @@ body {
     margin: auto;
 }
 
+/* * {
+    max-width: 1920px;
+} */
+
 ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
     background: transparent;
 }
 
+#header, #content {
+    text-align: center;
+}
+
 #main {
-    height: 100%;
-    background: #3d3a3a;
+    /* height: 100%;
+    background: #3d3a3a; */
+    margin: 0 auto;
 }
 
 #header {
@@ -115,21 +124,23 @@ body {
 
 .cont3 {
     background: whitesmoke;
-    display: grid;
-    grid-template-rows: repeat(4, 2fr);
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: 100%;
 }
 
 #descr {
     vertical-align: middle;
     font: 1.2em "Montesserat", sans-serif;
+    width: 51%;
 }
 
 #border {
     display: inline-block;
     height: 441px;
-    width: 789px;
+    width: 40%;
     min-height: 10vh;
     min-width: 25vw;
     position: relative;
@@ -183,7 +194,7 @@ body {
 
 .cont4 {
     background: linear-gradient(50deg, #ff60f7, #292596) border-box;
-    height: 300vh;
+    height: 250vh;
 }
 
 #courses {
@@ -199,7 +210,8 @@ body {
     margin: 5%;
     border-radius: 25px;
     padding: 5%;
-    font: 1.2em "Montesserat", sans-serif;
+    font: 1em "Montesserat", sans-serif;
+    height: 800px;
 }
 
 #card img {
@@ -318,6 +330,12 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+mark {
+    background: #781bb6;
+    padding: 0 3px;
+    color: whitesmoke;
+   }
 
 #feature {
     margin: 0 10vw 0 10vw;
@@ -568,4 +586,43 @@ input {
 #info h2 {
     margin: 0;
     padding-bottom: 3vh;
+}
+
+.card {
+    position: relative;
+  }
+
+.card img {
+    object-fit: cover;
+    width: 90%;
+    margin: 5%;
+}
+
+.card__side {
+    background-color: whitesmoke;
+    margin: 5%;
+    border-radius: 25px;
+    padding: 5%;
+    font: 1em "Montesserat", sans-serif;
+    height: 80%;
+    transition: all 0.75s ease;
+    position: absolute;
+            backface-visibility: hidden;
+    overflow: hidden;
+  }
+
+
+  .card__side--back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+
+  .card:hover .card__side--front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
 }
